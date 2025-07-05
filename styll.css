@@ -1,0 +1,82 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #000;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 10px;
+}
+
+.heart-frame {
+  position: relative;
+  width: 90vw;
+  max-width: 350px;
+  height: 350px;
+  clip-path: path("M150 30 C130 -10, 50 -10, 50 60 C50 110, 150 180, 150 180 C150 180, 250 110, 250 60 C250 -10, 170 -10, 150 30 Z");
+  overflow: hidden;
+  box-shadow: 0 0 20px #ff4d6d;
+  transition: opacity 1s ease-in-out;
+}
+
+.heart-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 10px;
+  color: white;
+  text-align: center;
+}
+
+#text {
+  font-size: 22px;
+  font-weight: bold;
+  color: #ff4d6d;
+}
+
+#nextBtn {
+  background-color: #ff4d6d;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#nextBtn:hover {
+  background-color: #ff0033;
+}
+
+.fade-in {
+  animation: fadeIn 1s;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
