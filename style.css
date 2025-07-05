@@ -9,10 +9,11 @@ body, html {
 
 .background {
   position: fixed;
-  top: 0; left: 0;
+  top: 0;
+  left: 0;
   width: 100vw;
   height: 100vh;
-  background-image: url('images/img1.jpg');
+  background-image: url('images/img1.jpg');  /* Başlangıç resmi */
   background-size: cover;
   background-position: center;
   z-index: -1;
@@ -64,12 +65,14 @@ body, html {
   border: 5px solid #ff0000;
   border-radius: 50%;
   top: -75px;
-  left: 25px;
   box-shadow: 0 0 15px #ff0000;
 }
 
+.heart-border::before {
+  left: 25px;
+}
+
 .heart-border::after {
-  left: auto;
   right: 25px;
 }
 
@@ -91,8 +94,4 @@ body, html {
 
 #nextBtn:hover {
   background-color: #222;
-}
-
-.background {
-  background-image: url('images/img1.jpg');
 }
