@@ -2,23 +2,25 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Seninle Bir Ömür</title>
   <link rel="stylesheet" href="style.css" />
 </head>
-<body>
+<body onclick="startMusic()">
   <audio id="bgMusic" loop>
-    <source src="music/madem.mp3" type="audio/mpeg">
-    Tarayıcın müziği desteklemiyor.
+    <source src="music/madem.mp3" type="audio/mpeg" />
+    Tarayıcınız ses formatını desteklemiyor.
   </audio>
 
-  <div class="container" onclick="startMusic()">
-    <div class="heart-frame fade-in">
-      <img id="bgImage" src="images/img1.jpg" alt="Sevgilim" />
-      <div class="overlay">
-        <h1 id="text">1 Ay</h1>
-        <button id="nextBtn">Devam ❤️</button>
-      </div>
+  <div class="background" id="bg"></div>
+
+  <div class="text-overlay">
+    <h1 id="text">1 Ay</h1>
+  </div>
+
+  <div class="heart-container">
+    <div class="heart-border">
+      <button id="nextBtn">Devam</button>
     </div>
   </div>
 
