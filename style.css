@@ -1,82 +1,81 @@
-* {
+body, html {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-}
-
-body, html {
   height: 100%;
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #000;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+  background: black;
 }
 
-.container {
+.background {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url('images/img1.jpg'); /* Başlangıç resmi */
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+  transition: background-image 1s ease-in-out;
+}
+
+/* Kalp çerçevesi sayfanın alt orta kısmında */
+.heart-container {
+  position: fixed;
+  bottom: 30px;   /* Alt kenara 30px boşluk */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 300px;
+  height: 300px;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  padding: 10px;
 }
 
-.heart-frame {
+.heart-border {
+  width: 100%;
+  height: 100%;
+  border: 5px solid #ff0000;
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%; /* Kalp şekli */
   position: relative;
-  width: 90vw;
-  max-width: 350px;
-  height: 350px;
-  clip-path: path("M150 30 C130 -10, 50 -10, 50 60 C50 110, 150 180, 150 180 C150 180, 250 110, 250 60 C250 -10, 170 -10, 150 30 Z");
-  overflow: hidden;
-  box-shadow: 0 0 20px #ff4d6d;
-  transition: opacity 1s ease-in-out;
+  box-shadow: 0 0 15px #ff0000;
 }
 
-.heart-frame img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.overlay {
+.heart-border::before,
+.heart-border::after {
+  content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.4);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  padding: 30px 10px;
-  color: white;
-  text-align: center;
+  width: 150px;
+  height: 150px;
+  background: transparent;
+  border: 5px solid #ff0000;
+  border-radius: 50%;
+  top: -75px;
+  left: 25px;
+  box-shadow: 0 0 15px #ff0000;
 }
 
-#text {
-  font-size: 22px;
-  font-weight: bold;
-  color: #ff4d6d;
+.heart-border::after {
+  left: auto;
+  right: 25px;
 }
 
 #nextBtn {
-  background-color: #ff4d6d;
-  border: none;
-  color: white;
-  padding: 10px 20px;
-  font-size: 16px;
-  border-radius: 30px;
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #000;
+  color: #fff;
+  border: 2px solid #ff0000;
+  padding: 12px 30px;
+  font-size: 18px;
   cursor: pointer;
+  border-radius: 30px;
+  z-index: 10;
   transition: background-color 0.3s ease;
 }
 
 #nextBtn:hover {
-  background-color: #ff0033;
-}
-
-.fade-in {
-  animation: fadeIn 1s;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
+  background-color: #222;
+  }
