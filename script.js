@@ -24,6 +24,6 @@ btn.addEventListener('click', () => {
 function startMusic() {
   const music = document.getElementById('bgMusic');
   if (music.paused) {
-    music.play().catch(e => console.log("Müzik başlamadı:", e));
+    music.play().catch(e => console.warn('Müzik başlatılamadı:', e));
   }
 }
