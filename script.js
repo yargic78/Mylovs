@@ -10,17 +10,14 @@ const imageList = [
  const text = document.getElementById('text');
  const btn = document.getElementById('nextBtn');
  
- btn.addEventListener('click', () => {
-   **const music = document.getElementById('bgMusic');**
-   **if (music.paused) {**
-   **  music.play().catch(e => console.warn('Müzik başlatılamadı:', e));**
-   **}**
-   index++;
-if (index < imageList.length) {
+btn.addEventListener('click', () => {
+  // Müzik
+  const music = document.getElementById('bgMusic');
   if (music.paused) {
     music.play().catch(err => console.warn('Müzik oynatılamadı:', err));
   }
 
+  // Fotoğraf & metin
   index++;
   if (index < imageList.length) {
     bg.style.backgroundImage = `url('${imageList[index].image}')`;
@@ -30,7 +27,6 @@ if (index < imageList.length) {
     btn.style.display = 'none';
   }
 });
-
 
 function startMusic() {
   const music = document.getElementById('bgMusic');
