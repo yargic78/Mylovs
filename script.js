@@ -5,13 +5,18 @@ const imageList = [
   { image: 'images/img4.jpg', text: 'Bir Ömüre Dönüşecek' }
 ];
 
-let index = 0;
-const bg = document.getElementById('bg');
-const text = document.getElementById('text');
-const btn = document.getElementById('nextBtn');
-
-btn.addEventListener('click', () => {
-  const music = document.getElementById('bgMusic');
+ let index = 0;
+ const bg = document.getElementById('bg');
+ const text = document.getElementById('text');
+ const btn = document.getElementById('nextBtn');
+ 
+ btn.addEventListener('click', () => {
+   **const music = document.getElementById('bgMusic');**
+   **if (music.paused) {**
+   **  music.play().catch(e => console.warn('Müzik başlatılamadı:', e));**
+   **}**
+   index++;
+if (index < imageList.length) {
   if (music.paused) {
     music.play().catch(err => console.warn('Müzik oynatılamadı:', err));
   }
